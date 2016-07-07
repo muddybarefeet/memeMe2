@@ -8,15 +8,21 @@
 
 import UIKit
 
-class MemeTableViewController: UIViewController {
+class MemeTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-//    need logic to display the table of saved memes
-
+//    @IBOutlet weak var addAMemeButton: UIBarButtonItem!
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        print("Loading the table view controller")
+//    }
+//
+////    need logic to display the table of saved memes
+//
+//    @IBAction func makeMeme(sender: AnyObject) {
+////        again show modally the meme editor
+//        
+//    }
 
 }
 

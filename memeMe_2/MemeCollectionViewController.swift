@@ -9,14 +9,25 @@
 
 import UIKit
 
-class MemeCollectionViewController: UIViewController {
+class MemeCollectionViewController: UICollectionViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var makeAMemeButton: UIBarButtonItem!
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        print("loading view collection")
     }
     
     //    need logic to display the collections of saved memes
+    
+    
+//    @IBAction func addMeme(sender: AnyObject) {
+////        on clicking this function we want to hava a modal popup that then takes you to the meme editor
+//        print("meme button clicked")
+////        
+//        
+//    }
     
     
 }
