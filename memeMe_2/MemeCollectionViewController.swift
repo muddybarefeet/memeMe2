@@ -14,6 +14,10 @@ class MemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var makeAMemeButton: UIBarButtonItem!
     
+//    access the memes in the app delegate
+    var memes: [Meme] {
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+    }
     
     override func viewWillAppear(animated: Bool) {
         print("loading view collection")
