@@ -35,16 +35,59 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 3.0
+        NSStrokeWidthAttributeName : -3.0
     ]
     
-    func formatText (position: String) {
-        let selector = position == "Top" ? topText : bottomText
-        _ = position == "Top" ? topTextDelegate : bottomTextDelegate
-        selector.text = position
-        selector.textAlignment = .Center
+    func formatText (textPosition: String) {
+        let selector = textPosition == "Top" ? topText : bottomText
+        _ = textPosition == "Top" ? topTextDelegate : bottomTextDelegate
+        selector.text = textPosition
         selector.defaultTextAttributes = memeTextAttributes
+        selector.textAlignment = .Center
         selector.delegate = topTextDelegate
+    }
+    
+//    Deal with showing the text area for the bottom text when editing
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
+    
+    func subscribeToKeyboardNotifications () {
+//        NSNotification center
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications () {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:
+            UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name:
+            UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if bottomText.isFirstResponder() {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if bottomText.isFirstResponder() {
+            view.frame.origin.y += getKeyboardHeight(notification)
+        }
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo!
+        let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.CGRectValue().height
     }
     
 }
