@@ -24,6 +24,11 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if (textField.text!.isEmpty) && textField.tag == 1 {
+            textField.text = "Top"
+        } else if (textField.text!.isEmpty) && textField.tag == 2 {
+            textField.text = "Bottom"
+        }
         return true
     }
     

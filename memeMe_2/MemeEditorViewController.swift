@@ -27,8 +27,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
-        formatText("TOP")
-        formatText("BOTTOM")
+        formatText("Top")
+        formatText("Bottom")
     }
     
     let memeTextAttributes = [
@@ -39,8 +39,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     ]
     
     func formatText (position: String) {
-        let selector = position == "TOP" ? topText : bottomText
-        _ = position == "TOP" ? topTextDelegate : bottomTextDelegate
+        let selector = position == "Top" ? topText : bottomText
+        _ = position == "Top" ? topTextDelegate : bottomTextDelegate
         selector.text = position
         selector.textAlignment = .Center
         selector.defaultTextAttributes = memeTextAttributes

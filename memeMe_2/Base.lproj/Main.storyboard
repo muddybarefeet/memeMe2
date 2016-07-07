@@ -213,15 +213,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1J-sO-Yt0">
                                 <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-ce-Mlm">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-ce-Mlm">
                                 <rect key="frame" x="32" y="468" width="256" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="D61-7J-xiI"/>
+                                    <constraint firstAttribute="width" constant="256" id="oJD-iC-bi6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8I-gX-Mnk">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8I-gX-Mnk">
                                 <rect key="frame" x="32" y="89" width="256" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mds-Fj-Kfe"/>
+                                    <constraint firstAttribute="width" constant="256" id="z1G-is-1X9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -234,8 +242,10 @@
                             <constraint firstItem="dfX-ce-Mlm" firstAttribute="centerX" secondItem="hR5-h4-c4q" secondAttribute="centerX" id="U3q-LA-zLE"/>
                             <constraint firstItem="V8I-gX-Mnk" firstAttribute="top" secondItem="xEf-xm-aEQ" secondAttribute="bottom" constant="25" id="ejk-Yk-4ge"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eRk-wJ-6rP" secondAttribute="trailing" constant="-20" id="guS-nm-yx4"/>
+                            <constraint firstItem="dfX-ce-Mlm" firstAttribute="width" secondItem="V8I-gX-Mnk" secondAttribute="width" id="kQ4-Lz-b4I"/>
                             <constraint firstItem="xEf-xm-aEQ" firstAttribute="leading" secondItem="hR5-h4-c4q" secondAttribute="leadingMargin" constant="-20" id="kwL-5q-M9r"/>
                             <constraint firstItem="eRk-wJ-6rP" firstAttribute="leading" secondItem="hR5-h4-c4q" secondAttribute="leadingMargin" constant="-20" id="skr-7F-ApZ"/>
+                            <constraint firstItem="dfX-ce-Mlm" firstAttribute="height" secondItem="V8I-gX-Mnk" secondAttribute="height" id="wD0-hT-0X3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xEf-xm-aEQ" secondAttribute="trailing" constant="-20" id="y0a-di-hm5"/>
                             <constraint firstItem="eRk-wJ-6rP" firstAttribute="top" secondItem="dfX-ce-Mlm" secondAttribute="bottom" constant="26" id="zye-d9-CG8"/>
                         </constraints>
