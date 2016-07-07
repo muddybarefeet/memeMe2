@@ -11,6 +11,7 @@ import UIKit
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -148,6 +149,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         topToolbar.hidden = false
         bottomToolbar.hidden = false
         return memedImage
+    }
+    
+//    return to the meme views
+    
+    @IBAction func returnToMainView(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil);
     }
  
     

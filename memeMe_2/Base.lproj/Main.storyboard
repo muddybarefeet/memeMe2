@@ -182,7 +182,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOn-jb-Tid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035.7333333333333" y="-154.30666666666667"/>
+            <point key="canvasLocation" x="1130" y="-155"/>
         </scene>
         <!--Meme Editor View Controller-->
         <scene sceneID="MsO-zq-MQJ">
@@ -214,6 +214,11 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="rQd-Ae-zdJ">
                                             <connections>
                                                 <action selector="shareMemeButtonPressed:" destination="cyl-CJ-jR7" id="QA9-WV-jT5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="240-vz-W6s">
+                                            <connections>
+                                                <action selector="returnToMainView:" destination="cyl-CJ-jR7" id="NAC-lk-yFS"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -269,6 +274,7 @@
                         <outlet property="bottomText" destination="dfX-ce-Mlm" id="coT-Bw-f8g"/>
                         <outlet property="bottomToolbar" destination="eRk-wJ-6rP" id="1dE-A2-apX"/>
                         <outlet property="cameraButton" destination="Pah-sI-t3l" id="kC0-Cz-cW8"/>
+                        <outlet property="cancelButton" destination="240-vz-W6s" id="sXc-4G-es1"/>
                         <outlet property="imageView" destination="l1J-sO-Yt0" id="VMw-dP-bGZ"/>
                         <outlet property="shareButton" destination="rQd-Ae-zdJ" id="tH8-mm-sIN"/>
                         <outlet property="topText" destination="V8I-gX-Mnk" id="HoS-sA-WBk"/>
