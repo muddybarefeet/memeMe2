@@ -90,4 +90,27 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         return keyboardSize.CGRectValue().height
     }
     
+//    go to the album or the camera depending on what was clicked
+    
+    @IBAction func pickMemeMethod(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        if sender.tag == 3 {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        } else if sender.tag == 4 {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        }
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            shareButton.enabled = true
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+ 
+    
 }
