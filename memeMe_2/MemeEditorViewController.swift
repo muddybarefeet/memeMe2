@@ -18,28 +18,33 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    //    name the delegates
+    let topTextDelegate = TextFieldDelegate()
+    let bottomTextDelegate = TextFieldDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
-        formatText("Top")
-        formatText("Bottom")
+        formatText("TOP")
+        formatText("BOTTOM")
     }
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : -3.0
+        NSStrokeWidthAttributeName : 3.0
     ]
     
     func formatText (position: String) {
-        let selector = position == "Top" ? topText : bottomText
+        let selector = position == "TOP" ? topText : bottomText
+        _ = position == "TOP" ? topTextDelegate : bottomTextDelegate
         selector.text = position
         selector.textAlignment = .Center
         selector.defaultTextAttributes = memeTextAttributes
-//        selector.delegate = topTextDelegate
+        selector.delegate = topTextDelegate
     }
     
 }
