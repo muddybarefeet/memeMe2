@@ -218,7 +218,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="240-vz-W6s">
                                             <connections>
-                                                <action selector="returnToMainView:" destination="cyl-CJ-jR7" id="NAC-lk-yFS"/>
+                                                <action selector="cancel:" destination="cyl-CJ-jR7" id="1HR-qn-5vF"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -274,7 +274,6 @@
                         <outlet property="bottomText" destination="dfX-ce-Mlm" id="coT-Bw-f8g"/>
                         <outlet property="bottomToolbar" destination="eRk-wJ-6rP" id="1dE-A2-apX"/>
                         <outlet property="cameraButton" destination="Pah-sI-t3l" id="kC0-Cz-cW8"/>
-                        <outlet property="cancelButton" destination="240-vz-W6s" id="sXc-4G-es1"/>
                         <outlet property="imageView" destination="l1J-sO-Yt0" id="VMw-dP-bGZ"/>
                         <outlet property="shareButton" destination="rQd-Ae-zdJ" id="tH8-mm-sIN"/>
                         <outlet property="topText" destination="V8I-gX-Mnk" id="HoS-sA-WBk"/>
