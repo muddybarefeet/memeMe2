@@ -17,6 +17,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var topToolbar: UINavigationBar!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
     
     //    name the delegates
     let topTextDelegate = TextFieldDelegate()
@@ -110,6 +112,42 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             shareButton.enabled = true
             dismissViewControllerAnimated(true, completion: nil)
         }
+    }
+    
+//    save the image to the array in the app delegate so it can then be accessed in the table and collection views
+    func save(memedImage: UIImage) {
+        let meme = Meme(topString: topText.text!, bottomString: bottomText.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+    }
+    
+    @IBAction func shareMemeButtonPressed(sender: AnyObject) {
+        let memedImage = generateMemedImage()
+        let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: nil)
+        
+        activityViewController.completionWithItemsHandler = {
+            (activity: String?, completed: Bool, items: [AnyObject]?, error: NSError?) -> Void in
+            if completed {
+                self.save(memedImage)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+    }
+    
+    func generateMemedImage() -> UIImage {
+        topToolbar.hidden = true
+        bottomToolbar.hidden = true
+        // Render view to an image
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage =
+            UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        topToolbar.hidden = false
+        bottomToolbar.hidden = false
+        return memedImage
     }
  
     

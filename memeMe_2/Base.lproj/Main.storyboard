@@ -210,7 +210,11 @@
                                 <rect key="frame" x="-4" y="20" width="328" height="44"/>
                                 <items>
                                     <navigationItem title="Meme Editor" id="aoN-Sd-4at">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="rQd-Ae-zdJ"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="rQd-Ae-zdJ">
+                                            <connections>
+                                                <action selector="shareMemeButtonPressed:" destination="cyl-CJ-jR7" id="QA9-WV-jT5"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -262,10 +266,12 @@
                     <connections>
                         <outlet property="albumButton" destination="abU-1O-RVw" id="HAA-vB-IHu"/>
                         <outlet property="bottomText" destination="dfX-ce-Mlm" id="coT-Bw-f8g"/>
+                        <outlet property="bottomToolbar" destination="eRk-wJ-6rP" id="1dE-A2-apX"/>
                         <outlet property="cameraButton" destination="Pah-sI-t3l" id="kC0-Cz-cW8"/>
                         <outlet property="imageView" destination="l1J-sO-Yt0" id="VMw-dP-bGZ"/>
                         <outlet property="shareButton" destination="rQd-Ae-zdJ" id="tH8-mm-sIN"/>
                         <outlet property="topText" destination="V8I-gX-Mnk" id="HoS-sA-WBk"/>
+                        <outlet property="topToolbar" destination="xEf-xm-aEQ" id="og5-u2-2l1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDi-g8-5tU" userLabel="First Responder" sceneMemberID="firstResponder"/>
