@@ -11,8 +11,10 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
     
+    @IBOutlet var collection: UICollectionView!
     
-    @IBOutlet weak var makeAMemeButton: UIBarButtonItem!
+//    @IBOutlet weak var makeAMemeButton: UIBarButtonItem!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
 //    access the memes in the app delegate
     var memes: [Meme] {
@@ -20,18 +22,31 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("loading view collection")
+        print("loading view collection", memes.count)
+
+
+    }
+
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("count the rows")
+        return memes.count
     }
     
-    //    need logic to display the collections of saved memes
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        print("in the lay it out")
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionCellViewController", forIndexPath: indexPath) as! MemeCollectionCellViewController
+        print("cell", cell)
+        let item = memes[indexPath.row]
+        cell.memeView?.image = item.memedImage
+        return cell
+        
+    }
     
-    
-//    @IBAction func addMeme(sender: AnyObject) {
-////        on clicking this function we want to hava a modal popup that then takes you to the meme editor
-//        print("meme button clicked")
-////        
-//        
-//    }
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let detailController = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = memes[indexPath.row].memedImage
+        navigationController?.pushViewController(detailController, animated: true)
+    }
     
     
 }
