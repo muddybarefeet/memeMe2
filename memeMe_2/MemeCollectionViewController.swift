@@ -11,8 +11,6 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
     
-    @IBOutlet var collection: UICollectionView!
-    
 //    @IBOutlet weak var makeAMemeButton: UIBarButtonItem!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     

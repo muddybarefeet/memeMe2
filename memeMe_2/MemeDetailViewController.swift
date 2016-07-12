@@ -22,9 +22,9 @@ class MemeDetailViewController: UIViewController {
     }
     
     
-    @IBAction func done(sender: AnyObject) {
-        navigationController?.popToRootViewControllerAnimated(true)
-        
-    }
+//    @IBAction func done(sender: AnyObject) {
+//        navigationController?.popToRootViewControllerAnimated(true)
+//        
+//    }
     
 }
