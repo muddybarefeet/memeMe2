@@ -28,7 +28,7 @@
         <scene sceneID="e3F-n0-g6n">
             <objects>
                 <navigationController id="x75-iY-B0l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" selectedImage="tableImage" id="APU-rW-bTc"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="tableImage" selectedImage="table" id="APU-rW-bTc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rpC-nu-XXg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -128,7 +128,7 @@
         <scene sceneID="o9K-g4-efP">
             <objects>
                 <navigationController id="XT8-cg-Mdn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" selectedImage="colImage" id="dH4-t4-TrX"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="colImage" id="dH4-t4-TrX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhp-lq-azx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -164,7 +164,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-SP-Isq">
-                                            <rect key="frame" x="14" y="14" width="100" height="100"/>
+                                            <rect key="frame" x="8" y="8" width="100" height="100"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -249,7 +249,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-ce-Mlm">
-                                <rect key="frame" x="32" y="449" width="256" height="40"/>
+                                <rect key="frame" x="32" y="484" width="256" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5tl-hL-kJ0"/>
@@ -278,7 +278,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l1J-sO-Yt0" firstAttribute="centerX" secondItem="dfX-ce-Mlm" secondAttribute="centerX" id="908-fo-Uek"/>
-                            <constraint firstItem="eRk-wJ-6rP" firstAttribute="top" secondItem="dfX-ce-Mlm" secondAttribute="bottom" constant="35" id="Ia1-5v-woz"/>
+                            <constraint firstItem="eRk-wJ-6rP" firstAttribute="top" secondItem="dfX-ce-Mlm" secondAttribute="bottom" id="Ia1-5v-woz"/>
                             <constraint firstItem="l1J-sO-Yt0" firstAttribute="top" secondItem="V8I-gX-Mnk" secondAttribute="bottom" constant="-74" id="M09-iE-o4S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xEf-xm-aEQ" secondAttribute="trailing" constant="-24" id="N4A-sy-0xy"/>
                             <constraint firstItem="eRk-wJ-6rP" firstAttribute="leading" secondItem="hR5-h4-c4q" secondAttribute="leadingMargin" constant="-20" id="N4k-YI-to4"/>
@@ -311,6 +311,7 @@
     </scenes>
     <resources>
         <image name="colImage" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
         <image name="tableImage" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
