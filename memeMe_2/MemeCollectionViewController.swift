@@ -6,7 +6,6 @@
 //  Copyright © 2016 Anna Rogers. All rights reserved.
 //
 
-
 import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
@@ -21,8 +20,6 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         print("loading view collection", memes.count)
-
-
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
