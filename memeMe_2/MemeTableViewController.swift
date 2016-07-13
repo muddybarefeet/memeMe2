@@ -27,12 +27,14 @@ class MemeTableViewController: UITableViewController {
     
 //    function to tell the cell what it is
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TableMemeCell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("TableMemeCell") as! CustomRow
         let memeInfo = memes[indexPath.row]
-
-        cell.textLabel?.text = memeInfo.topString + " " + memeInfo.bottomString
-        cell.detailTextLabel?.text = ""
-        cell.imageView?.image = memeInfo.memedImage
+        
+        let newLabel = memeInfo.topString + " " + memeInfo.bottomString
+        
+        cell.cellLabel!.text = newLabel
+        
+        cell.cellImage.image = memeInfo.memedImage
         
         return cell
         

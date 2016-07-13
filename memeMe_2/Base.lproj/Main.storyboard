@@ -50,29 +50,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableMemeCell" textLabel="rJS-0e-wed" detailTextLabel="6y6-VF-UaX" style="IBUITableViewCellStyleSubtitle" id="Lu8-R1-vQC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableMemeCell" id="Lu8-R1-vQC" customClass="CustomRow" customModule="memeMe_2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lu8-R1-vQC" id="x4n-Pc-rhj">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rJS-0e-wed">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6y6-VF-UaX">
-                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YKV-Vs-tCm">
+                                            <rect key="frame" x="8" y="0.0" width="48" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="C4O-uy-vT7"/>
+                                                <constraint firstAttribute="height" constant="43" id="TID-C9-0rK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DU-8i-2OI">
+                                            <rect key="frame" x="64" y="11" width="248" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="248" id="yyD-iK-Q4S"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7DU-8i-2OI" firstAttribute="centerY" secondItem="YKV-Vs-tCm" secondAttribute="centerY" id="6YC-zi-R7Y"/>
+                                        <constraint firstItem="YKV-Vs-tCm" firstAttribute="leading" secondItem="x4n-Pc-rhj" secondAttribute="leadingMargin" id="Rvl-8C-GfW"/>
+                                        <constraint firstItem="YKV-Vs-tCm" firstAttribute="top" secondItem="x4n-Pc-rhj" secondAttribute="top" id="Uh6-n6-Y7D"/>
+                                        <constraint firstItem="7DU-8i-2OI" firstAttribute="leading" secondItem="YKV-Vs-tCm" secondAttribute="trailing" constant="8" id="XuV-yg-hvp"/>
+                                        <constraint firstItem="7DU-8i-2OI" firstAttribute="trailing" secondItem="x4n-Pc-rhj" secondAttribute="trailingMargin" id="owV-Jb-Mh5"/>
+                                        <constraint firstItem="7DU-8i-2OI" firstAttribute="leading" secondItem="YKV-Vs-tCm" secondAttribute="trailing" constant="8" symbolic="YES" id="tW4-q2-jr4"/>
+                                        <constraint firstItem="7DU-8i-2OI" firstAttribute="centerY" secondItem="x4n-Pc-rhj" secondAttribute="centerY" id="vup-Wh-ZIw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImage" destination="YKV-Vs-tCm" id="hc3-RY-9dV"/>
+                                    <outlet property="cellLabel" destination="7DU-8i-2OI" id="V6p-kP-ADC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -186,6 +201,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="ldR-KS-FvZ" id="4Qd-wo-Rwj"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVr-B8-9gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,7 +257,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l1J-sO-Yt0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l1J-sO-Yt0">
                                 <rect key="frame" x="-4" y="64" width="328" height="460"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-ce-Mlm">
@@ -309,6 +327,6 @@
         <image name="tableImage" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fpv-te-GMc"/>
+        <segue reference="mRc-HA-rQ1"/>
     </inferredMetricsTieBreakers>
 </document>
