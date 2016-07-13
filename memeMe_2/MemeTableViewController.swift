@@ -14,10 +14,13 @@ class MemeTableViewController: UITableViewController {
     var memes: [Meme] {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
+    
+    
    
     override func viewWillAppear(animated: Bool) {
         print("Loading the table view controller", memes.count)
         tableView!.reloadData()
+        print(memes)
     }
     
 //    fuction to return the number of cells to make

@@ -233,6 +233,7 @@
                                             <action selector="pickMemeMethod:" destination="cyl-CJ-jR7" id="c39-Bs-WEy"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8HR-Q1-nNg"/>
                                     <barButtonItem tag="4" systemItem="camera" id="Pah-sI-t3l"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="aMI-Tm-wTz"/>
                                 </items>
