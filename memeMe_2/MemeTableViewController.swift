@@ -15,9 +15,9 @@ class MemeTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
         print("Loading the table view controller", memes.count)
+        tableView!.reloadData()
     }
     
 //    fuction to return the number of cells to make

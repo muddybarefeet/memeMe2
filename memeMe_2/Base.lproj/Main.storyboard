@@ -28,7 +28,7 @@
         <scene sceneID="e3F-n0-g6n">
             <objects>
                 <navigationController id="x75-iY-B0l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" image="tableImage" selectedImage="table" id="APU-rW-bTc"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="tableImage" selectedImage="tableImage" id="APU-rW-bTc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rpC-nu-XXg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -150,17 +150,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ldR-KS-FvZ">
-                            <size key="itemSize" width="128" height="128"/>
+                            <size key="itemSize" width="120" height="121"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionCellViewController" id="Pil-Jz-L4Y" customClass="MemeCollectionCellViewController" customModule="memeMe_2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="64" width="120" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="121"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-SP-Isq">
@@ -186,9 +186,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="flowLayout" destination="ldR-KS-FvZ" id="eUx-Vn-Uo9"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVr-B8-9gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,7 +306,6 @@
     </scenes>
     <resources>
         <image name="colImage" width="30" height="30"/>
-        <image name="table" width="30" height="30"/>
         <image name="tableImage" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -11,7 +11,7 @@ import UIKit
 class MemeCollectionViewController: UICollectionViewController {
     
 //    @IBOutlet weak var makeAMemeButton: UIBarButtonItem!
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+//    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
 //    access the memes in the app delegate
     var memes: [Meme] {
@@ -20,17 +20,15 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         print("loading view collection", memes.count)
+        collectionView!.reloadData()
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("count the rows")
         return memes.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        print("in the lay it out")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionCellViewController", forIndexPath: indexPath) as! MemeCollectionCellViewController
-        print("cell", cell)
         let item = memes[indexPath.row]
         cell.memeView?.image = item.memedImage
         return cell
