@@ -20,19 +20,14 @@ class MemeCollectionViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         print("loading view collection", memes.count)
         collectionView!.reloadData()
-//        
-        let space: CGFloat = 1.5
-        let dimension:CGFloat = view.frame.size.width >= view.frame.size.height ? (view.frame.size.width - (5 * space)) / 6.0 :  (view.frame.size.width - (2 * space)) / 3.0
-        
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSizeMake(dimension, dimension)
-//        let space : CGFloat = 3.0
-//        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+//     
+//        let space: CGFloat = 0.5
+//        let dimension:CGFloat = view.frame.size.width >= view.frame.size.height ? (view.frame.size.width - (5 * space)) / 6.0 :  (view.frame.size.width - (2 * space)) / 3.0
 //        
 //        flowLayout.minimumInteritemSpacing = space
 //        flowLayout.minimumLineSpacing = space
-//        flowLayout.itemSize = CGSizeMake(dimension, dimension*1.5)
+//        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,13 +42,17 @@ class MemeCollectionViewController: UICollectionViewController {
         
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let space: CGFloat = 1.0
-        let dimension:CGFloat = view.frame.size.width >= view.frame.size.height ? (view.frame.size.width - (4 * space)) / 5.0 :  (view.frame.size.width - (2 * space)) / 3.0
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
-        return CGSizeMake(dimension, dimension)
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        adjustFlowLayout(size)
     }
     
-
+    func adjustFlowLayout(size: CGSize) {
+        let space: CGFloat = 1.5
+        let dimension:CGFloat = size.width >= size.height ? (size.width - (5 * space)) / 6.0 :  (size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
+    }
+    
 }

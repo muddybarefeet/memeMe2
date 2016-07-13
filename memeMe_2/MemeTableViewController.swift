@@ -18,9 +18,7 @@ class MemeTableViewController: UITableViewController {
     
    
     override func viewWillAppear(animated: Bool) {
-        print("Loading the table view controller", memes.count)
         tableView!.reloadData()
-        print(memes)
     }
     
 //    fuction to return the number of cells to make
@@ -32,13 +30,9 @@ class MemeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TableMemeCell") as! CustomRow
         let memeInfo = memes[indexPath.row]
-        
         let newLabel = memeInfo.topString + " " + memeInfo.bottomString
-        
         cell.cellLabel!.text = newLabel
-        
         cell.cellImage.image = memeInfo.memedImage
-        
         return cell
         
     }
