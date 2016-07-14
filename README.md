@@ -4,7 +4,7 @@ MemeMe
 This app allows users to make a meme, either from a photo they have taken or a picture that is already in their photo library. 
 This is then saved and can be displayed to them as a list (swift table) or a grid (swift collection).
 
-Swift Compoents used:
+###Swift Compoents used:
 
 * Tab views 
 * UI Table Views
@@ -14,7 +14,7 @@ Swift Compoents used:
 * Image picker
 * Delegates
 
-How to use:
+###How to use:
 
 Simply clone the repo and launch in Xcode.
 
