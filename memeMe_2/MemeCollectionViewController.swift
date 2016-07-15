@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class MemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -44,23 +44,13 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func adjustFlowLayout() {
-//        print("called", flowLayout)
         let space: CGFloat = 0.5
-        let dimension:CGFloat = view.frame.width >= view.frame.height ? (view.frame.width - (5 * space)) / 6.0 :  (view.frame.width - (2 * space)) / 3.0
+        let dimension:CGFloat = view.frame.size.width >= view.frame.size.height ? (view.frame.size.width - (5 * space)) / 6.0 :  (view.frame.size.width - (2 * space)) / 3.0
         flowLayout.minimumLineSpacing = 0.0
-//        flowLayout.minimumInteritemSpacing = 0.0
+        flowLayout.minimumInteritemSpacing = 0.0
         flowLayout.sectionInset = UIEdgeInsetsMake(-18, 0, 0, 0)
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
         
     }
-
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        let kWhateverHeightYouWant = 100
-//        let space: CGFloat = 0.5
-//        let dimension:CGFloat = view.frame.width >= view.frame.height ? (view.frame.width - (5 * space)) / 6.0 :  (view.frame.width - (2 * space)) / 3.0
-//        flowLayout.minimumLineSpacing = 0.0
-//        flowLayout.minimumInteritemSpacing = 0.0
-//        return CGSizeMake(dimension, dimension)
-//    }
     
 }
