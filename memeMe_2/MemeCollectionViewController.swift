@@ -20,8 +20,10 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
     override func viewDidAppear(animated: Bool) {
         print("loading view collection", memes.count)
         collectionView!.reloadData()
+    }
+    
+    override func viewDidLoad() {
         adjustFlowLayout()
-
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,7 +49,7 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
         let dimension:CGFloat = view.frame.width >= view.frame.height ? (view.frame.width - (5 * space)) / 6.0 :  (view.frame.width - (2 * space)) / 3.0
         flowLayout.minimumLineSpacing = 0.0
 //        flowLayout.minimumInteritemSpacing = 0.0
-        flowLayout.sectionInset = UIEdgeInsetsMake(-17, 0, 0, 0)
+        flowLayout.sectionInset = UIEdgeInsetsMake(-18, 0, 0, 0)
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
         
     }
