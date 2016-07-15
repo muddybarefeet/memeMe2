@@ -23,7 +23,7 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     override func viewDidLoad() {
-        adjustFlowLayout()
+        adjustFlowLayout(view.frame.size)
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,13 +40,13 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         print("transition called")
-        adjustFlowLayout()
+        adjustFlowLayout(size)
     }
     
-    func adjustFlowLayout() {
+    func adjustFlowLayout(size: CGSize) {
 //        print("called", flowLayout)
         let space: CGFloat = 0.5
-        let dimension:CGFloat = view.frame.width >= view.frame.height ? (view.frame.width - (5 * space)) / 6.0 :  (view.frame.width - (2 * space)) / 3.0
+        let dimension:CGFloat = size.width >= size.height ? (size.width - (5 * space)) / 6.0 :  (size.width - (2 * space)) / 3.0
         flowLayout.minimumLineSpacing = 0.0
 //        flowLayout.minimumInteritemSpacing = 0.0
         flowLayout.sectionInset = UIEdgeInsetsMake(-18, 0, 0, 0)
