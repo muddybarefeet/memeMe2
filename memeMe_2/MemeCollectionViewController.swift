@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class MemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -33,34 +33,27 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionCellViewController", forIndexPath: indexPath) as! MemeCollectionCellViewController
         let item = memes[indexPath.row]
-        cell.backgroundView = UIImageView(image: item.memedImage)
+        cell.memeView.image = item.memedImage
         return cell
-        
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let detailController = storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = memes[indexPath.row].memedImage
+        navigationController?.pushViewController(detailController, animated: true)
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        print("transition called")
         adjustFlowLayout(size)
     }
     
     func adjustFlowLayout(size: CGSize) {
-//        print("called", flowLayout)
-        let space: CGFloat = 0.5
+        let space: CGFloat = 2.0
         let dimension:CGFloat = size.width >= size.height ? (size.width - (5 * space)) / 6.0 :  (size.width - (2 * space)) / 3.0
         flowLayout.minimumLineSpacing = 0.0
-//        flowLayout.minimumInteritemSpacing = 0.0
-        flowLayout.sectionInset = UIEdgeInsetsMake(-18, 0, 0, 0)
+        flowLayout.minimumInteritemSpacing = 0.0
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
         
     }
-
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        let kWhateverHeightYouWant = 100
-//        let space: CGFloat = 0.5
-//        let dimension:CGFloat = view.frame.width >= view.frame.height ? (view.frame.width - (5 * space)) / 6.0 :  (view.frame.width - (2 * space)) / 3.0
-//        flowLayout.minimumLineSpacing = 0.0
-//        flowLayout.minimumInteritemSpacing = 0.0
-//        return CGSizeMake(dimension, dimension)
-//    }
     
 }

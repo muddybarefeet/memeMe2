@@ -160,7 +160,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Yi4-uG-hLD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ldR-KS-FvZ">
                             <size key="itemSize" width="120" height="121"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -175,17 +175,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="121"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-SP-Isq">
-                                            <rect key="frame" x="8" y="8" width="104" height="105"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EHa-SP-Isq">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="121"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="EHa-SP-Isq" firstAttribute="top" secondItem="Pil-Jz-L4Y" secondAttribute="topMargin" id="OPw-IA-KA1"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="EHa-SP-Isq" secondAttribute="trailing" id="eMQ-Eh-mvT"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="EHa-SP-Isq" secondAttribute="bottom" id="sUy-ZV-Vci"/>
-                                    <constraint firstItem="EHa-SP-Isq" firstAttribute="leading" secondItem="Pil-Jz-L4Y" secondAttribute="leadingMargin" id="tiR-Dg-kY3"/>
+                                    <constraint firstAttribute="trailing" secondItem="EHa-SP-Isq" secondAttribute="trailing" id="6vm-I3-yhk"/>
+                                    <constraint firstItem="EHa-SP-Isq" firstAttribute="top" secondItem="Pil-Jz-L4Y" secondAttribute="top" id="9kk-fg-1Tn"/>
+                                    <constraint firstItem="EHa-SP-Isq" firstAttribute="leading" secondItem="Pil-Jz-L4Y" secondAttribute="leading" id="AT2-mM-JbM"/>
+                                    <constraint firstAttribute="bottom" secondItem="EHa-SP-Isq" secondAttribute="bottom" id="J4E-CV-zZw"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="memeView" destination="EHa-SP-Isq" id="jFd-cV-EWM"/>
