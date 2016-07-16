@@ -150,7 +150,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
 //    return to the meme views
-    
     @IBAction func cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
