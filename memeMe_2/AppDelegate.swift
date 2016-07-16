@@ -16,8 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    store the memes generated
     var memes = [Meme]()
     
+    let meme1 = Meme(topString: "Come to the dark side...",
+                     bottomString: "...We have cookies",
+                     originalImage: UIImage(named: "cookies")!,
+                     memedImage: UIImage(named: "cookies")!
+    )
+    
+    let meme2 = Meme(topString: "To use this app",
+                     bottomString: "tap + you must",
+                     originalImage: UIImage(named: "yoda")!,
+                     memedImage: UIImage(named: "yoda")!
+    )
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        memes.append(meme1)
+        memes.append(meme2)
         return true
     }
 
