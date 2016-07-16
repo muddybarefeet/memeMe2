@@ -11,7 +11,9 @@ import UIKit
 class TextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.text = ""
+        if textField.text == "Top" || textField.text == "Bottom" {
+            textField.text = ""
+        }
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

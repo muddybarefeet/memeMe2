@@ -279,7 +279,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-ce-Mlm">
-                                <rect key="frame" x="32" y="424" width="256" height="40"/>
+                                <rect key="frame" x="32" y="444" width="256" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5tl-hL-kJ0"/>
@@ -305,7 +305,7 @@
                             <constraint firstItem="l1J-sO-Yt0" firstAttribute="top" secondItem="3oz-KJ-Kwr" secondAttribute="bottom" id="Z0I-Th-FK1"/>
                             <constraint firstItem="dfX-ce-Mlm" firstAttribute="centerX" secondItem="hR5-h4-c4q" secondAttribute="centerX" id="fY1-J2-qtT"/>
                             <constraint firstItem="eRk-wJ-6rP" firstAttribute="leading" secondItem="hR5-h4-c4q" secondAttribute="leadingMargin" constant="-20" id="fuB-NS-rZC"/>
-                            <constraint firstItem="eRk-wJ-6rP" firstAttribute="top" secondItem="dfX-ce-Mlm" secondAttribute="bottom" constant="60" id="g9F-in-8ur"/>
+                            <constraint firstItem="eRk-wJ-6rP" firstAttribute="top" secondItem="dfX-ce-Mlm" secondAttribute="bottom" constant="40" id="g9F-in-8ur"/>
                             <constraint firstItem="xEf-xm-aEQ" firstAttribute="top" secondItem="3oz-KJ-Kwr" secondAttribute="bottom" id="qJd-mF-Ege"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xEf-xm-aEQ" secondAttribute="trailing" constant="-20" id="sPU-30-RQM"/>
                             <constraint firstItem="V8I-gX-Mnk" firstAttribute="centerX" secondItem="hR5-h4-c4q" secondAttribute="centerX" id="uFt-Gw-BVk"/>

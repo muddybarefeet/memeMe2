@@ -26,7 +26,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
-        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
         formatText("Top")
         formatText("Bottom")
@@ -49,9 +48,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
 //    Deal with showing the text area for the bottom text when editing
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         subscribeToKeyboardNotifications()
     }
     
@@ -75,13 +74,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = getKeyboardHeight(notification) * (-1)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            view.frame.origin.y += getKeyboardHeight(notification)
+//          as the keyboard is beind dismissed the y value can be set back to 0
+            view.frame.origin.y = 0
         }
     }
     
@@ -107,7 +107,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
-            imageView.contentMode = UIViewContentMode.ScaleAspectFill
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
             shareButton.enabled = true
             dismissViewControllerAnimated(true, completion: nil)
         }

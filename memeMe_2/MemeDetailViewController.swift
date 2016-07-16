@@ -16,15 +16,9 @@ class MemeDetailViewController: UIViewController {
     var meme:UIImage!
     
     override func viewWillAppear(animated: Bool) {
-        print("detail loaded")
         memeImage.image = meme
         memeImage.contentMode = UIViewContentMode.ScaleAspectFit
     }
     
-    
-//    @IBAction func done(sender: AnyObject) {
-//        navigationController?.popToRootViewControllerAnimated(true)
-//        
-//    }
     
 }
