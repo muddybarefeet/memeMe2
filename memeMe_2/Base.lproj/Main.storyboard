@@ -266,7 +266,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8I-gX-Mnk">
-                                <rect key="frame" x="32" y="104" width="256" height="40"/>
+                                <rect key="frame" x="32" y="84" width="256" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="9Or-jL-s9g"/>
@@ -297,7 +297,7 @@
                             <constraint firstItem="d6J-My-mMV" firstAttribute="top" secondItem="l1J-sO-Yt0" secondAttribute="bottom" id="515-7H-o7f"/>
                             <constraint firstItem="dfX-ce-Mlm" firstAttribute="height" secondItem="V8I-gX-Mnk" secondAttribute="height" id="PHI-90-Xka"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eRk-wJ-6rP" secondAttribute="trailing" constant="-20" id="QpH-4y-WZh"/>
-                            <constraint firstItem="V8I-gX-Mnk" firstAttribute="top" secondItem="xEf-xm-aEQ" secondAttribute="bottom" constant="40" id="Qy7-TW-Zpx"/>
+                            <constraint firstItem="V8I-gX-Mnk" firstAttribute="top" secondItem="xEf-xm-aEQ" secondAttribute="bottom" constant="20" id="Qy7-TW-Zpx"/>
                             <constraint firstItem="d6J-My-mMV" firstAttribute="top" secondItem="eRk-wJ-6rP" secondAttribute="bottom" id="R72-kb-GVy"/>
                             <constraint firstItem="xEf-xm-aEQ" firstAttribute="leading" secondItem="hR5-h4-c4q" secondAttribute="leadingMargin" constant="-20" id="Sei-Gp-8j6"/>
                             <constraint firstItem="l1J-sO-Yt0" firstAttribute="leading" secondItem="hR5-h4-c4q" secondAttribute="leadingMargin" constant="-20" id="VVD-jn-Xvx"/>
