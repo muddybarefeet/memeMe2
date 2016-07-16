@@ -72,17 +72,22 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             UIKeyboardWillHideNotification, object: nil)
     }
     
+//else to deal with if the user clicks straight from the bottom text to the top text(not leave a keyboard gap)
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
             view.frame.origin.y = getKeyboardHeight(notification) * (-1)
+        } else if topText.isFirstResponder(){
+            reset()
         }
     }
     
+//  return the keyboard to the bottom position
+    func reset() {
+        self.view.frame.origin.y = 0
+    }
+    
     func keyboardWillHide(notification: NSNotification) {
-        if bottomText.isFirstResponder() {
-//          as the keyboard is beind dismissed the y value can be set back to 0
-            view.frame.origin.y = 0
-        }
+        reset()
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
